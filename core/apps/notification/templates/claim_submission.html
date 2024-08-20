@@ -1,0 +1,55 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Claim Submission</title>
+</head>
+<body>
+<br/>
+ <div id="header">
+        <img src= "{{ branding_logo }}" style="width:100%" alt="logo">
+</div>
+<div>
+
+    <br/>
+    <div style="font: small/1.5 Arial,Helvetica,sans-serif">
+        <b>Hi,</b><br/><br/>
+        Below Claim has been submitted<br/><br/>
+    </div>
+    <div>
+        <table style="border-collapse: collapse;">
+            <tr>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid; width:8%; text-align:center">Claim Id</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid; width:14%">Employee Name</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;width:10%">Start Date</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;width:10%">End Date</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;width:10%">Amount($)</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;width:10%">Status</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid; text-align:justify">Purpose</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;width:8%"></td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;text-align:center">{{ claim_id }}</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">{{ emp_name }}</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">{{ start_date }}</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">{{ end_date }}</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">{{ amount }}</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">{{ status }}</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;text-align:justify">{{ purpose }}</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">
+                    <button style="width: 50px;height: 25px; background: #ed7d36; border: 0;">
+                        <a href="{{website_link}}" style="text-decoration: none;color: white;"><b>View</b></a>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div><br/><br/>
+    <div>
+    Thanks<br/>Cloud Pay team<br/>email: {{ support_mail }}
+    </div>
+</div>
+
+</body>
+</html>

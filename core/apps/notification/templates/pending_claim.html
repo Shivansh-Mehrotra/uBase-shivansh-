@@ -1,0 +1,51 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pending Claim</title>
+</head>
+<body>
+<br/>
+ <div id="header">
+        <img src= "{{ branding_logo }}" style="width:100%" alt="logo">
+</div>
+<div>
+
+    <br/>
+    <div style="font: small/1.5 Arial,Helvetica,sans-serif">
+        <b>Hi {{user}},</b><br/><br/>
+        Below claims are pending to be reviewed by you:<br/><br/>
+    </div>
+    <div>
+        <table style="border-collapse: collapse;">
+            <tr>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">Claim Id</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">Status</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;width:200px !important; text-align:justify">Comments</td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;">Last Updated </td>
+                <td style="padding: 10px 10px 10px 10px;border: 1px solid;"></td>
+            </tr>
+            {% for c in claims %}
+                <tr>
+                    <td style="padding: 10px 10px 10px 10px;border: 1px solid;">{{ c.id }}</td>
+                    <td style="padding: 10px 10px 10px 10px;border: 1px solid;">{{ c.status }}</td>
+                    <td style="padding: 10px 10px 10px 10px;border: 1px solid;width:200px !important; text-align:justify">{{ c.comments }}</td>
+                    <td style="padding: 10px 10px 10px 10px;border: 1px solid;">{{ c.last_updated }}</td>
+                    <td style="padding: 10px 10px 10px 10px;border: 1px solid;">
+                        <button style="width: 50px;height: 25px; background: #ed7d36; border: 0;">
+                            <a href={{website_link}} style="text-decoration: none;color: white;"><b>View</b></a>
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div><br/><br/>
+    <div>
+    Thanks<br/>Cloud Pay team<br/>email: {{ support_mail }}
+    </div>
+</div>
+
+</body>
+</html>

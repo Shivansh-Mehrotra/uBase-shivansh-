@@ -1,0 +1,1 @@
+default_app_config = 'core.apps.lookup_management.apps.LookupManagementConfig'

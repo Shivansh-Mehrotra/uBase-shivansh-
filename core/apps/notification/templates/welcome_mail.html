@@ -1,0 +1,44 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloudpay</title>
+</head>
+<body>
+<div>
+    <div>
+        <img src= "{{ branding_logo }}" style="width:100%" alt="logo">
+    </div><br/>
+    <div style="font: small/1.5 Arial,Helvetica,sans-serif">
+        <b>Hi {{user}},</b><br/>
+        Welcome onboard!!<br/><br/>Thanks for signing up for the Cloud Pay subscription.
+        I am sure that filing an office claim(s) has never been easier before.<br/><br/>
+        Please try our enterprise offering and we are sure that will change your mindset.<br/><br/>
+        For any issues please reach out to our support team<br/><br/>
+    </div>
+    <div>
+<!--            <div>-->
+<!--            Please reset your password via below link:-->
+<!--            </div><br>-->
+        <br/>
+        <div align="center" >
+            <button style="width: 150px;height: 30px; background: #ed7d36; border: 0;">
+                <a href="{{password_reset_link}}" style="text-decoration: none;color: white;"><b>Reset Password</b></a>
+            </button>
+        </div>
+    </div>
+        <br/>
+<!--        Alternatively, open the following url in your browser<br>-->
+<!--        <a href="{{password_reset_link}}">{{password_reset_link}}</a>-->
+
+    <div>
+        Thanks<br/>Cloud Pay team<br/>
+        {% if support_email %}
+            email: {{ support_mail }}
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
