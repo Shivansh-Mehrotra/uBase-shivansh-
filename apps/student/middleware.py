@@ -31,7 +31,6 @@ class RequestResponseLoggingMiddleware(MiddlewareMixin):
 
     def process_response(self, request, response):
         if hasattr(request, 'method_name'):
-           # print('im here')
             RequestResponseLogData.objects.create(
                 path=request.path_info,
                 method=request.method_name,
