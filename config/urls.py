@@ -23,7 +23,7 @@ urlpatterns = [
     path("", index),
     path('admin/', admin.site.urls),
     path('admin_tools/', include('admin_tools.urls')),
-    # path("api/admin/", include("rest_framework.urls")),
+    path("api/admin/", include("rest_framework.urls")),
     path('api/v1/', include('core.apps.auth_user.urls')),
     path('api/v1/', include('core.apps.role.urls')),
     path('api/v1/', include('apps.user.urls')),

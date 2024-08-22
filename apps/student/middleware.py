@@ -1,3 +1,5 @@
+from django.utils.deprecation import MiddlewareMixin
+from .models import RequestResponseLogData
 import logging
 logger = logging.getLogger(__name__)
 
@@ -19,4 +21,22 @@ class StudentAppMiddleware:
         return None
 
     def process_template_response(self, request, response):
+        return response
+
+class RequestResponseLoggingMiddleware(MiddlewareMixin):
+    def process_request(self, request):
+        request.request_body = request.body.decode('utf-8') if request.body else ''
+        request.method_name = request.method
+        request.path_info = request.path_info
+
+    def process_response(self, request, response):
+        if hasattr(request, 'method_name'):
+           # print('im here')
+            RequestResponseLogData.objects.create(
+                path=request.path_info,
+                method=request.method_name,
+                request_body=request.request_body,
+                response_body=response.content.decode('utf-8'),
+                status_code=response.status_code
+            )
         return response

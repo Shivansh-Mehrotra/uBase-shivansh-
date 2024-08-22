@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'admin_tools.menu',
     'admin_tools.dashboard',
 
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -85,7 +86,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # make responce handlre -> add header for maintain api/permission version
+    #shivansh
     'apps.student.middleware.StudentAppMiddleware',
+    'apps.student.middleware.RequestResponseLoggingMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'

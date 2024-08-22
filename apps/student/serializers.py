@@ -17,11 +17,11 @@ class StudentSerializer(serializers.ModelSerializer):
             raise ValidationError('Name must contain only alphabetic characters and spaces.')
         return value
 
-    def validate_age(value):
-        if not isinstance(value, int):
-            raise ValidationError('Age must be an integer.')
-        if value < 0:
-            raise ValidationError('Age cannot be negative.')
-        if value > 100:
-            raise ValidationError('Age must be a realistic human age (<= 100).')
-        return value
+  #  def validate_age(value):
+      #  if not isinstance(value, int):
+       #     raise ValidationError('Age must be an integer.')
+        #if value < 0:
+         #   raise ValidationError('Age cannot be negative.')
+       # if value > 100:
+        #    raise ValidationError('Age must be a realistic human age (<= 100).')
+        #return value
