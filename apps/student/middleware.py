@@ -43,7 +43,7 @@ class StudentAppMiddleware:
 #             )
 #         return response
 
-<<<<<<< HEAD
+
 
 class RequestResponseLogMiddleware:
     def __init__(self, get_response):
@@ -90,21 +90,3 @@ class RequestResponseLogMiddleware:
             response_body=str(exception),
             error_details=error_details,
         )
-=======
-class RequestResponseLoggingMiddleware(MiddlewareMixin):
-    def process_request(self, request):
-        request.request_body = request.body.decode('utf-8') if request.body else ''
-        request.method_name = request.method
-        request.path_info = request.path_info
-
-    def process_response(self, request, response):
-        if hasattr(request, 'method_name'):
-            RequestResponseLogData.objects.create(
-                path=request.path_info,
-                method=request.method_name,
-                request_body=request.request_body,
-                response_body=response.content.decode('utf-8'),
-                status_code=response.status_code
-            )
-        return response
->>>>>>> bcead1b5772d887f94cbded079e980720b83a3ca
