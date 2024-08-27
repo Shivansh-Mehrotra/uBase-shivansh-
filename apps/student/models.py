@@ -18,8 +18,9 @@ class RequestResponseLogData(models.Model):
     method = models.CharField(max_length=100)
     request_body = models.TextField(blank=True, null=True)
     response_body = models.TextField(blank=True, null=True)
-    status_code = models.IntegerField()
+    status_code = models.IntegerField(blank=True,null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    error_details = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.method} {self.path} - {self.status_code}"

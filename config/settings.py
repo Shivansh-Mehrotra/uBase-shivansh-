@@ -88,7 +88,7 @@ MIDDLEWARE = [
     # make responce handlre -> add header for maintain api/permission version
     #shivansh
     'apps.student.middleware.StudentAppMiddleware',
-    'apps.student.middleware.RequestResponseLoggingMiddleware',
+    'apps.student.middleware.RequestResponseLogMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
