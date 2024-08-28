@@ -81,6 +81,8 @@ class RequestResponseLogMiddleware:
         )
 
     def log_failed_request(self, request, exception, request_body):
+
+        print(exception)
         error_details = traceback.format_exc()
 
         RequestResponseLogData.objects.create(
@@ -89,4 +91,5 @@ class RequestResponseLogMiddleware:
             request_body=request_body,
             response_body=str(exception),
             error_details=error_details,
+            status_code=exception.status_code
         )
